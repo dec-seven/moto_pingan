@@ -1,6 +1,6 @@
 /*
  * @Date: 2023-08-25 10:19:49
- * @LastEditTime: 2023-08-25 11:22:33
+ * @LastEditTime: 2023-08-27 14:01:22
  * @Description: 
  */
 import { defineConfig } from 'vite'
@@ -29,8 +29,9 @@ export default defineConfig({
   server:{
     host:'0.0.0.0',
     proxy:{
-      '/ton':{
+      '/user':{
         target:'http://127.0.0.1:3000',
+        // target:'http://101.42.9.100:3000',
         changeOrigin:true
       }
     }
