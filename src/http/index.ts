@@ -1,6 +1,6 @@
 /*
  * @Date: 2023-08-25 12:00:03
- * @LastEditTime: 2023-08-27 14:01:12
+ * @LastEditTime: 2023-09-08 13:26:43
  * @Description: 
  */
 import axios, { AxiosInstance, AxiosRequestConfig,AxiosResponse,AxiosError } from 'axios'
@@ -23,8 +23,11 @@ service.interceptors.response.use(
     const status = error.response?.status 
     switch (status) {
       case 401:
-      message = '登录失效，请重新登录！'
-      break
+        message = '登录失效，请重新登录！'
+        break
+      case 500:
+        message = '服务器异常!'
+        break
     }
     ElMessage.error(message)
     return Promise.reject(error)

@@ -1,19 +1,20 @@
 <!--
  * @Date: 2023-08-25 10:19:49
- * @LastEditTime: 2023-08-25 11:58:11
+ * @LastEditTime: 2023-09-08 17:44:48
  * @Description: 
 -->
 <template>
   <div class="common-layout">
-    <el-container>
+    <router-view></router-view>
+
+    <!-- <el-container>
       <el-header>Header</el-header>
       <el-container>
         <el-aside width="200px">Aside</el-aside>
         <el-main>
-          <router-view></router-view>
         </el-main>
       </el-container>
-    </el-container>
+    </el-container> -->
   </div>
 </template>
 
