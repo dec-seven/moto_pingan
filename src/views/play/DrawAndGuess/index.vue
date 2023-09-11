@@ -7,13 +7,7 @@
   <div class="play-container">
     <el-row class="play-main">
       <el-col :span="16" class="play-main-draw">
-        <canvas
-          id="canvas"
-          @mousedown="handleMousedown"
-          @mousemove="handleMousemove"
-          @mouseup="handleMouseup"
-          @mouseenter="handleMouseenter"
-        />
+        <div id="canvas-container" style="width: 100%; height: 100%"></div>
       </el-col>
       <el-col :span="8" class="play-main-chat">聊天区域</el-col>
     </el-row>
@@ -24,21 +18,13 @@
 </template>
 
 <script setup lang="ts">
-const handleMousedown = (e) => {
-  console.log(e);
-}
+import { onMounted } from 'vue';
+import BoardCanvas from './Board';
 
-const handleMousemove = () => {
+onMounted(()=>{
+  new BoardCanvas(document.getElementById('canvas-container') as HTMLElement)
+})
 
-}
-
-const handleMouseup = () => {
-
-}
-
-const handleMouseenter = () => {
-  
-}
 </script>
 
 <style lang="less" scoped>
